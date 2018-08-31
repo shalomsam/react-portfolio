@@ -1,0 +1,14 @@
+{
+    "home": {
+        "content": {
+            "h1_mainTitle": "Hi, I'm Shalom Sam.",
+            "h2_subTitle_fw-lighter": "LAMP/MEAN FullStack Developer, Architect and UI/UX Engineer"
+        }
+    },
+    "about": {
+        "content": {
+            "h1_mainTitle": "About",
+            "p_text": "I'm a Full Stack Engineer based in Bombay (India), with over 8 years of experience."
+        }
+    }
+}

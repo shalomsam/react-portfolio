@@ -1,0 +1,12 @@
+@import "../../assets/scss/mixins.scss";
+
+.Logo {
+    max-width: 32px;
+    max-height: 32px;
+    width: 100%;
+
+    @include md {
+        max-width: 50px;
+        max-height: 50px;
+    }
+}

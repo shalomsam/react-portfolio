@@ -1,0 +1,216 @@
+@import "../../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../../node_modules/bootstrap/scss/_variables.scss";
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition($prop) {
+    -webkit-transition: #{$prop};
+    -moz-transition: #{$prop};
+    /*noinspection CssUnknownProperty*/
+    -ms-transition: #{$prop};
+    -o-transition: #{$prop};
+    transition: #{$prop};
+}
+
+@mixin box-shadow($prop) {
+    -webkit-box-shadow: $prop;
+    -moz-box-shadow: $prop;
+    box-shadow: $prop;
+}
+
+@mixin opacity($val) {
+    -ms-opacity: $val;
+    filter: opacity($val * 100);
+    opacity: $val;
+}
+
+@mixin linear-gradient($direction, $gradients...) {
+    background-color: nth($gradients, 1);
+    background-image: linear-gradient($direction, $gradients...);
+}
+
+@mixin bg($path, $rest...) {
+
+    $scroll: "scroll";
+    $repeat: "no-repeat";
+    $x: 0;
+    $y: 0;
+    $color: transparent;
+    $bg-size-x: '';
+    $bg-size-y: '';
+
+    @if (map-get($rest, 'scroll')) {
+        $scroll: map-get($rest, 'scroll');
+    }
+    @if (map-get($rest, 'repeat')) {
+        $repeat: map-get($rest, 'repeat');
+    }
+    @if (map-get($rest, 'x')) {
+        $x: map-get($rest, 'x');
+    }
+    @if (map-get($rest, 'y')) {
+        $y: map-get($rest, 'y');
+    }
+    @if (map-get($rest, 'color')) {
+        $color: map-get($rest, 'color');
+    }
+    @if (map-get($rest, 'bg-size-x')) {
+        $bg-size-x: map-get($rest, 'bg-size-x');
+    }
+    @if (map-get($rest, 'bg-size-y')) {
+        $bg-size-y: map-get($rest, 'bg-size-y');
+    }
+
+
+    background: url(#{$path}) $scroll $repeat $x $y $color;
+
+    @if ($bg-size-x != '') {
+        background-size: #{$bg-size-x + " " + $bg-size-y};
+    }
+}
+
+@mixin keyframe ($animation_name) {
+
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+
+@mixin animate ($name) {
+    -webkit-animation-name: $name;
+    animation-name: $name;
+}
+  
+@mixin animation ($delay, $duration, $animation:"", $timingFunction:"ease", $fillMode:"forwards", $iterationCount:"initial") {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: #{$timingFunction};
+    -webkit-animation-name: #{$animation};
+    -webkit-animation-iteration-count: #{$iterationCount};
+    -webkit-animation-fill-mode: #{$fillMode}; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-timing-function: #{$timingFunction};
+    -moz-animation-name: #{$animation};
+    -moz-animation-iteration-count: #{$iterationCount};
+    -moz-animation-fill-mode: #{$fillMode}; /* this prevents the animation from restarting! */
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-timing-function: #{$timingFunction};
+    -o-animation-name: #{$animation};
+    -o-animation-iteration-count: #{$iterationCount};
+    -o-animation-fill-mode: #{$fillMode}; /* this prevents the animation from restarting! */
+
+    -ms-animation-delay: $delay;
+    -ms-animation-duration: $duration;
+    -ms-animation-timing-function: #{$timingFunction};
+    -ms-animation-name: #{$animation};
+    -ms-animation-iteration-count: #{$iterationCount};
+    -ms-animation-fill-mode: #{$fillMode}; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-timing-function: #{$timingFunction};
+    animation-name: #{$animation};
+    animation-iteration-count: #{$iterationCount};
+    animation-fill-mode: #{$fillMode}; /* this prevents the animation from restarting! */
+}
+  
+@mixin screen ($min, $max, $orientation:false) {
+    @if $orientation != false {
+        @media screen and (min-width: $min) and (max-width: $max) and (orientation: $orientation) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+}
+
+@mixin min-width ($minW) {
+    @media screen and (min-width: $minW) {
+        @content;
+    }
+}
+  
+@mixin max-width ($maxW) {
+    @media screen and (max-width: $maxW) {
+        @content;
+    }
+}
+  
+@mixin min-height ($minH) {
+    @media screen and (min-height: $minH) {
+        @content;
+    }
+}
+  
+@mixin max-height ($maxH) {
+    @media screen and (max-height: $maxH) {
+        @content;
+    }
+}
+  
+@mixin landscape {
+    @media screen and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+        @content;
+    }
+}
+  
+@mixin md {
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        @content;
+    }
+}
+  
+@mixin lg {
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: map-get($grid-breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin retina {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      @content;
+    }
+}
+  

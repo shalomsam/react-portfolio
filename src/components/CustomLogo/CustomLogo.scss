@@ -1,0 +1,44 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+$font-size: 38px;
+$font-color: map-get($map: $colors, $key: 'secondary');
+
+.CustomLogo {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    font-weight: bold;
+    font-size: $font-size;
+    width: $font-size;
+    height: $font-size;
+    max-width: $font-size;
+    line-height: $font-size - 4;
+
+    @include md {
+        background: rgba(0,0,0,0.5);
+        max-width: inherit;
+        min-width: 100%;
+        width: 100%;
+        height: 54px;
+        line-height: 51px;
+    }
+    
+    .layer {
+        display: inline-block;
+        min-width: 100%;
+        text-align: center;
+        position: relative;
+        top: -9px;
+        z-index: 1;
+        color: $font-color;
+
+        &:last-child {
+            position: absolute;
+            z-index: 10;
+            top: 5px;
+            left: 0px;
+            color: darken($color: $font-color, $amount: 5);
+        }
+    }
+}

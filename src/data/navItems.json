@@ -1,0 +1,32 @@
+[
+    {
+        "icon": "fa-fw fas fa-home",
+        "title": "Home",
+        "href": "/"
+    },
+    {
+        "icon": "fa-fw fas fa-user-tie",
+        "title": "About",
+        "href": "/about"
+    },
+    {
+        "icon": "fa-fw fas fa-laptop-code",
+        "title": "Portfolio",
+        "href": "/portfolio"
+    },
+    {
+        "icon": "fa-fw fas fa-laptop-code",
+        "title": "CodeLab",
+        "href": "/codelab"
+    },
+    {
+        "icon": "fa-fw fab fa-blogger-b",
+        "title": "Blog",
+        "href": "http://blog.shalomsam.com"
+    },
+    {
+        "icon": "fa-fw fas fa-envelope",
+        "title": "Get in touch",
+        "href": "/contact"
+    }
+]

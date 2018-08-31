@@ -1,0 +1,55 @@
+@import "../../assets/scss/mixins.scss";
+
+
+.NavBar {
+    
+    &.sidebar {
+
+        @include md {        
+            padding: 0;
+            display: block;
+            height: 100%;
+            text-align: left;
+    
+            a.navbar-brand, .navbar-collapse {
+                padding: 10px;
+            }
+    
+            .navbar-collapse {
+                display: block !important;
+                padding:0;
+    
+                a {
+                    text-align: center;
+                    padding: 20px;
+                    font-size: 21px;
+                    
+                    @include md {
+                        padding: 0;
+                        width: 60px;
+                        height: 60px;
+                        line-height: 54px;
+                    }
+                }
+            }
+
+            .navbar-toggler {
+                display: none;
+            }
+    
+        }
+    }
+
+    .navbar-collapse {
+        // align-items: flex-start;
+        ul {
+            align-items: flex-start;
+        }
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    
+}

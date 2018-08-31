@@ -1,0 +1,19 @@
+.HomeWrp {
+    position: relative;
+    text-align: left;
+
+    .Home {
+        text-align: center;
+        
+        h1 {
+            margin-top: 20px;
+        }
+    }
+
+    .Canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}

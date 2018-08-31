@@ -1,0 +1,47 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+
+.Layout {
+
+    @include md {
+        height: 100%;
+    }
+
+    .SidebarWrp {
+        position: relative;
+        z-index: 3;
+
+        @include md {
+            width: $sidebar-width;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .Page {
+        position: relative;
+        text-align: left;
+        padding: 20px 0;
+        
+        @include md {
+            margin-left: $sidebar-width;
+            height: 100%;
+        }
+    }
+    
+    /* .Canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .ContentWrp {
+        position: relative;
+        z-index: 2
+    } */
+
+}

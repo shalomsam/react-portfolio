@@ -1,0 +1,1 @@
+All components that are stateless go in here.
