@@ -16,7 +16,7 @@ $font-color: map-get($map: $colors, $key: 'secondary');
     line-height: $font-size - 4;
 
     @include md {
-        background: rgba(0,0,0,0.5);
+        background: rgba(0,0,0,0.8);
         max-width: inherit;
         min-width: 100%;
         width: 100%;

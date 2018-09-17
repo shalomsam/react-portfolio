@@ -1,3 +1,98 @@
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/mixins.scss";
+
 .About {
     
+    @include md {
+        height: 100%;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 16px;
+
+        @include lg {
+            font-size: 21px;
+        }
+    }
+
+    .Mask {
+        position: relative;
+        top: -20px;
+        height: 300px;
+        padding: 0;
+
+        @include lg {
+            mask-image: linear-gradient(to right, transparent 25%, black 75%);
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            height: 100%;
+            background-size: 100%;
+        }
+    }
+
+    .Img {
+        // mask-image: radial-gradient(circle at 50% 60%, black 50%, rgba(0, 0, 0, 0.6) 50%);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        &.img-1 {
+            @include lg {
+                background-position-x: right;
+            }
+        }
+
+        &.img-2 {
+            background-position-y: -220px;
+            
+            @include lg {
+                background-position-y: 0;
+                transform: scaleX(-1);
+            }
+        }
+
+        &.img-3 {
+            background-position-y: -220px;
+
+            @include lg {
+                background-position-y: 0;
+                transform: scaleX(-1);
+            }
+        }
+
+        &.img-4 {
+            background-position-y: -287px;
+
+            @include lg {
+                background-position-y: 0;
+                background-position-x: 146px;
+            }
+        }
+
+        &.img-5 {
+            background-position-y: -255px;
+
+            @include lg {
+                background-position-y: 0;
+                background-position: 120px 0px;
+            }
+        }
+
+        &.img-6 {
+            background-position-y: -178px;
+
+            @include lg {
+                background-position-x: 80px;
+                background-position-y: 0;
+            }
+        }
+
+    }
 }
+

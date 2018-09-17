@@ -171,6 +171,9 @@ module.exports = {
               },
               {
                 loader: require.resolve('sass-loader'),
+                options: {
+                  includePaths: ['src/assets/scss']
+                },
               },
               {
                 loader: require.resolve('postcss-loader'),
@@ -179,6 +182,7 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
+                    require('postcss-scss'),
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
                       browsers: [
@@ -227,6 +231,15 @@ module.exports = {
                 },
               },
             ],
+          },
+          {
+            test: /\.(html)$/,
+            use: {
+              loader: 'html-loader',
+              options: {
+                attrs: [':data-src']
+              }
+            }
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.

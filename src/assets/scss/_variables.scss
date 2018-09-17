@@ -1,0 +1,17 @@
+$colors: (
+    primary: #2E1D62,
+    primary-alt: #513D91,
+    secondary: #487EEF,
+    tertiary: #11A887,
+    lite-grey: #F2F4F5,
+    dark-grey: #181818,
+);
+
+$primary: map-get($colors, 'primary');
+$primary-alt: map-get($colors, 'primary-alt');
+$secondary: map-get($colors, 'secondary');
+$tertiary: map-get($colors, 'tertiary');
+$lite-grey: map-get($colors, 'lite-grey');
+$dark-grey: map-get($colors, 'dark-grey');
+
+$sidebar-width: 60px;

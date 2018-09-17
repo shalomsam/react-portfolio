@@ -2,13 +2,12 @@ import React from "react";
 import Avatar from "../../Avatar/Avatar";
 import styles from "./Home.scss";
 import Canvas from "../../Canvas/Canvas";
-
-console.log(styles);
+import ParticleOptions from "../../../data/homeParticleOptions.json";
 
 const home = (props) => {
     return (
         <div className={styles.HomeWrp}>
-            <Canvas className={styles.Canvas} />
+            <Canvas className={styles.Canvas} options={ParticleOptions} />
             <div className={"container-fluid " + styles.Home}>
                 <div className="row">
                     <div className="col">

@@ -1,27 +1,34 @@
 import Particle from "./Particle";
+import { hasProperty, isObject } from "../../utils";
 
 export default class Particles {
 
-    // options = {
-    //     maxParticles: 0,
-    //     colors: [],
-    //     shapes: [],
-    //     size: 0.00,
-    //     minSize: 0.00,
-    //     maxSize: 0.00,
-    //     velocity: 0.00,
-    //     minVelocity: 0.00,
-    //     maxVelocity: 0.00,
-    //     alpha: 0.7
-    // }
-
+    /**
+     * @param canvas The html canvas element
+     * 
+     * Example Particle Options:
+     * @param options = {
+     *   maxParticles: 0,
+     *   colors: ['red', 'green', '#ff1000'],
+     *   shapes: ['square', 'circle', 'rectangle', { type: 'image', src: '/path/to/image' }],
+     *   size: 0.00,
+     *   minSize: 0.00,
+     *   maxSize: 0.00,
+     *   velocity: 0.00,
+     *   minVelocity: 0.00,
+     *   maxVelocity: 0.00,
+     *   alpha: 0.7    
+     * }
+     * 
+     */
     constructor(canvas, options) {
 
         const {
             maxParticles,
             colors,
             shapes,
-            alpha
+            alpha,
+            randomLoop,
         } = options;
 
         this.particles = [];
@@ -37,15 +44,71 @@ export default class Particles {
         this.alpha = alpha || 0.5;
         this.particleOptions = options;
 
-        this.createParticles();
+        this.randomLoop = randomLoop || true;
+
+        if (maxParticles === this.shapes.length || !this.randomLoop) {
+            this.createLimitedParticles()
+        } else {
+            this.createRandomParticles();
+        }
     }
 
-    createParticles = () => {
-        for (let i = 1; i <= this.particleCount; i++) {
-            let shape = this.shapes[Math.floor(Math.random() * this.shapes.length)];
-            let color = this.colors[Math.floor(Math.random() * this.colors.length)];
+    createLimitedParticles = () => {
+        this.particles = this.shapes.map((item) => {
 
-            let particle = new Particle(this.canvas, shape, color, this.particleOptions);
+            this.particleOptions.shape = item;
+            this.particleOptions.color = this.colors[Math.floor(Math.random() * this.colors.length)] || undefined;
+
+            if (hasProperty("type", item) && item.type === "image") {
+                this.particleOptions.shape = typeof this.particleOptions.size === "object" ? "rectangle" : "square";
+                this.particleOptions.image = item;
+            } else if (hasProperty("type", item)) {
+                throw new Error("Shape object must have a property 'type'.");
+            }
+
+            if (hasProperty("color", item)) {
+                this.particleOptions.color = item.color;
+            }
+
+            if (hasProperty("size", item) && isObject(item.size)) {
+                this.particleOptions.size = item.size;
+            }
+
+            const particle = new Particle(this.canvas, this.particleOptions);
+            particle.draw();
+            return particle;
+        });
+    }
+
+    createRandomParticles = () => {
+        for (let i = 1; i <= this.particleCount; i++) {
+
+            this.particleOptions.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+            this.particleOptions.shape = this.shapes[Math.floor(Math.random() * this.shapes.length)];
+
+
+            if (hasProperty("type", this.particleOptions.shape)) {
+                let shape = Object.assign({}, this.particleOptions.shape);
+
+                if (shape.type === "image") {
+                    this.particleOptions.shape = typeof this.particleOptions.size === "object" ? "rectangle" : "square";
+                    this.particleOptions.image = shape;
+                } else {
+                    this.particleOptions.shape = shape.type;
+                }
+
+                if (hasProperty("color", shape)) {
+                    this.particleOptions.color = shape.color;
+                }
+    
+                if (hasProperty("size", shape) && isObject(shape.size)) {
+                    this.particleOptions.size = shape.size;
+                }
+            } else if (isObject(this.particleOptions.shape)) {
+                throw new Error("Shape object must have a property 'type'.");
+            }
+
+            let particle = new Particle(this.canvas, this.particleOptions);
 
             if (i !== 1) {
                 this.collisionCorrection(particle, this.particles[i - 2]);

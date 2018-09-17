@@ -1,6 +1,11 @@
+import { hasProperty } from "../../utils";
+
 export default class Particle {
-    constructor(canvas, shape, color, options) {
+    constructor(canvas, options) {
         const {
+            shape,
+            color,
+            image,
             size,
             maxSize,
             minSize,
@@ -11,22 +16,45 @@ export default class Particle {
             vx,
             vy,
             ttl,
+            debugOptions
         } = options;
 
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.shape = shape || "circle";
         this.color = color || "#F20000";
-        this.maxSize = maxSize || 20;
-        this.minSize = minSize || 10;
+        this.maxSize = parseFloat(maxSize) || 20;
+        this.minSize = parseFloat(minSize) || 10;
         this.size = this.parseSize(size) || this.genRandomSize();
-        this.minVelocity = minVelocity || 0.01;
-        this.maxVelocity = maxVelocity || 0.09;
+        this.minVelocity = parseFloat(minVelocity) || 0.01;
+        this.maxVelocity = parseFloat(maxVelocity) || 0.09;
         this.x = x || this.getRandomCoordinate('x');
         this.y = y || this.getRandomCoordinate('y');
         this.vx = vx || this.getRandomFloat(this.minVelocity, this.maxVelocity);
         this.vy = vy || this.getRandomFloat(this.minVelocity, this.maxVelocity);
         this.ttl = ttl || undefined;
+        this.imageOptions = image || undefined;
+        this.image = new Image();
+        this.debug = debugOptions || { enabled: false };
+
+        // Errors
+        if (image !== undefined && !hasProperty("src", image)) {
+            throw new Error("Image object must have 'src' property.");
+        }
+
+        if (!(hasProperty("width", this.size) && hasProperty("height", this.size)) && !hasProperty("radius", this.size)) {
+            throw new Error("Size object must have either 'width' AND 'height' OR 'radius' property.");
+        }
+
+        if (this.debug.enabled) {
+            if (hasProperty('attachAllParticles', this.debug) && this.debug.attachAllParticles) {
+                window.Particles = window.Particles || [];
+                window.Particles.push(Particle);
+            }
+            if (hasProperty('attachSingleParticles', this.debug) && window.Particle ) {
+                window.Particle = this;
+            }
+        }
     }
 
     parseSize = (size) => {
@@ -42,24 +70,32 @@ export default class Particle {
         const posY = this.y = y;
         const rSize = this.size = size;
 
-        switch (this.shape) {
-            case "rectangle":
-            case "rect":
-            case "square":
-                let { width, height } = rSize;
-                if (this.shape === "square") {
-                    height = width;
-                }
-                this.drawRectangle(posX, posY, width, height);
-                break;
 
-            case "circle":
-            default:
-                const { radius } = rSize;
-                this.drawCircle(posX, posY, radius);
-                break;
+        if (this.imageOptions) {
+            this.image.src = this.imageOptions.src;
+            this.ctx.drawImage(this.image, this.x, this.y, this.getSize('x'), this.getSize('y'));
+
+        } else {
+
+            switch (this.shape) {
+                case "rectangle":
+                case "rect":
+                case "square":
+                    let { width, height } = rSize;
+                    if (this.shape === "square") {
+                        height = width;
+                    }
+                    this.drawRectangle(posX, posY, width, height);
+                    break;
+                    
+    
+                case "circle":
+                default:
+                    const { radius } = rSize;
+                    this.drawCircle(posX, posY, radius);
+                    break;
+            }
         }
-
     }
 
     drawCircle = (x, y, radius) => {
@@ -72,6 +108,11 @@ export default class Particle {
     drawRectangle = (x, y, width, height) => {
         this.ctx.fillStyle = this.color;
         this.ctx.fillRect(x, y, width, height);
+    }
+
+    drawImage = (...args) => {
+        console.log(args);
+        this.ctx.drawImage.apply(this.ctx, args);
     }
 
     getRandomCoordinate = (axis, from, to, fixed) => {

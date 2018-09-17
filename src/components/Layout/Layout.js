@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import NavBar from "../bootstrap/NavBar";
-import Canvas from "../Canvas/Canvas";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/login-avatar.png";
 import navData from "../../data/navItems.json"
 import styles from "./Layout.scss";
 
-
 export default class Layout extends Component {
+
+    state = {
+        isHovered: false,
+    }
 
     render() {  
         let navItems;
@@ -27,17 +29,37 @@ export default class Layout extends Component {
             navBarOpts['dark'] = true;
         }
 
+
         navItems = navData.map((item, i) => {
-            return (
-                <li key={i} className="nav-item">
-                    <NavLink 
-                        className="nav-link" 
-                        to={item.href} 
+            let link = (
+                <NavLink 
+                    className={"nav-link " + styles.NavLink}
+                    to={item.href} 
+                    title={item.title}
+                    exact
+                >
+                    
+                    <i className={item.icon}></i>
+                    <span className={styles.NavLinkTxt}>{item.title}</span>
+                </NavLink>
+            );
+
+            if (item.href.indexOf('http') > -1) {
+                link = (
+                    <a 
+                        className={"nav-link " + styles.NavLink}
+                        href={item.href}
                         title={item.title}
                     >
-                        
                         <i className={item.icon}></i>
-                    </NavLink>
+                        <span className={styles.NavLinkTxt}>{item.title}</span>
+                    </a>
+                );
+            }
+
+            return (
+                <li key={i} className={"nav-item " + styles.NavItem}>
+                    { link }
                 </li>
             );
         })
@@ -51,10 +73,7 @@ export default class Layout extends Component {
                     </NavBar>
                 </div>
                 <main className={styles.Page} >
-                    {/* <Canvas className={styles.Canvas} />
-                    <div className={styles.ContentWrp}> */}
-                        { this.props.children }
-                    {/* </div> */}
+                    { this.props.children }
                 </main>
             </div>
         );

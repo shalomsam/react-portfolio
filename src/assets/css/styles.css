@@ -64,6 +64,9 @@ h1, h2, h3, h4, h5, h6 {
 .fw-bold {
     font-weight: 600;
 }
+.fs-italic {
+    font-style: italic;
+}
 
 .fs-vw {
     font-size: 4.5vw;

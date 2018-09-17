@@ -1,0 +1,27 @@
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/mixins.scss";
+
+.Portfolio {
+    .PortfolioWrp {
+        .Work {
+            padding: 20px 0;
+            border-bottom: 5px solid #000000;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            div {
+                margin: 10px 0;
+            }
+
+            .Tag {
+                background-color: $primary;
+            }
+
+            .Description {
+                margin: 15px 0;
+            }
+        }
+    }
+}

@@ -8,6 +8,39 @@
         height: 100%;
     }
 
+    .NavItem {
+
+        .NavLink {
+            color: darken($lite-grey, 50%) !important;
+            
+            /* &.active {
+                color: $secondary !important;
+            } */
+        }
+
+        .NavLinkTxt {
+            font-size: 10px;
+            font-weight: 300;
+            display: inline-block;
+            text-indent: -999999px;
+            text-transform: uppercase;
+        }   
+
+        &:hover {
+            .NavLink {
+                i {
+                    visibility: hidden;
+                    position: absolute;
+                }
+                .NavLinkTxt {
+                    text-indent: none;
+                    display: inline;
+                    color: $secondary !important;
+                }
+            }
+        }
+    }
+
     .SidebarWrp {
         position: relative;
         z-index: 3;
@@ -43,5 +76,9 @@
         position: relative;
         z-index: 2
     } */
-
 }
+
+:global .navbar-dark .navbar-nav .nav-link.active {
+    color: $secondary !important;
+}
+

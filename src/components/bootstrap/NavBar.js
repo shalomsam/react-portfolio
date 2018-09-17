@@ -56,9 +56,9 @@ class NavBar extends Component {
 
         // Check nav theme color (dark/light)
         if (this.props.dark) {
-            navClass += " navbar-dark bg-dark";
+            navClass += " navbar-dark";
         } else {
-            navClass += " navbar-light bg-light";
+            navClass += " navbar-light";
         }
 
         // Navbar class (with collapse)

@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Particles from "./Particles";
-import ParticleOptions from "./particleOptions.json";
+
 
 export default class Canvas extends Component {
     
     componentDidMount() {
         window.addEventListener('resize', () => {
-            this.canvasSizing(this.refs.canvas);
+            if (this.refs.canvas) {
+                this.canvasSizing(this.refs.canvas);
+            }
         });
 
         this.canvasSizing(this.refs.canvas);
@@ -20,11 +22,11 @@ export default class Canvas extends Component {
     }
 
     canvasSizing = (canvas) => {
-        const wWidth = this.refs.canvas.parentElement.clientWidth;
-        const wHeight = this.refs.canvas.parentElement.clientHeight;
+        window.can = canvas;
+        const wWidth = canvas.parentElement.clientWidth;
+        const wHeight = canvas.parentElement.clientHeight;
+        
         const scale = window.devicePixelRatio;
-
-        window.testCanvas = this.refs.canvas;
 
         canvas.style.width = wWidth + "px";
         canvas.style.height = wHeight + "px";
@@ -34,7 +36,8 @@ export default class Canvas extends Component {
     }
 
     animate = () => {
-        const particles = new Particles(this.refs.canvas, ParticleOptions);
+        let options = this.props.options;
+        const particles = new Particles(this.refs.canvas, options);
         this.interval = setInterval(() => {
             particles.animate();
         });

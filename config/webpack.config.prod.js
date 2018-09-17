@@ -240,6 +240,9 @@ module.exports = {
                     },
                     {
                       loader: require.resolve('sass-loader'),
+                      options: {
+                        includePaths: ['src/assets/scss']
+                      },
                     },
                     {
                       loader: require.resolve('postcss-loader'),
@@ -248,6 +251,7 @@ module.exports = {
                         // https://github.com/facebookincubator/create-react-app/issues/2677
                         ident: 'postcss',
                         plugins: () => [
+                          require('postcss-scss'),
                           require('postcss-flexbugs-fixes'),
                           autoprefixer({
                             browsers: [
@@ -267,6 +271,15 @@ module.exports = {
               )
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          {
+            test: /\.(html)$/,
+            use: {
+              loader: 'html-loader',
+              options: {
+                attrs: [':data-src']
+              }
+            }
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.

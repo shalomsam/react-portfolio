@@ -28,7 +28,7 @@
     "html-webpack-plugin": "2.29.0",
     "i": "^0.3.6",
     "jest": "20.0.4",
-    "npm": "^6.3.0",
+    "npm": "^6.4.1",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -99,7 +99,9 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "html-loader": "^0.5.5",
     "node-sass": "^4.9.2",
+    "postcss-scss": "^2.0.0",
     "sass-loader": "^7.0.3"
   }
 }

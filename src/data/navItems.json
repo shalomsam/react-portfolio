@@ -11,12 +11,17 @@
     },
     {
         "icon": "fa-fw fas fa-laptop-code",
-        "title": "Portfolio",
+        "title": "Work",
         "href": "/portfolio"
     },
     {
-        "icon": "fa-fw fas fa-laptop-code",
-        "title": "CodeLab",
+        "icon": "fa-fw fas fa-code",
+        "title": "Skills",
+        "href": "/skills"
+    },
+    {
+        "icon": "fa-fw fas fa-flask",
+        "title": "Lab",
         "href": "/codelab"
     },
     {
@@ -26,7 +31,7 @@
     },
     {
         "icon": "fa-fw fas fa-envelope",
-        "title": "Get in touch",
+        "title": "Contact",
         "href": "/contact"
     }
 ]

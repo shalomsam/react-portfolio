@@ -1,0 +1,190 @@
+[
+    {
+        "title": "ConstantContact",
+        "links": [
+            {
+                "text": ".IN Website",
+                "href": "https://www.constantcontact.in/"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path": "work/constantcontact"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Angular v1.5", "PHP", "Composer", "Laravel"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "Hostgator Control Panel",
+        "links": [
+            {
+                "text": "Hostgator Control Panel",
+                "href": "https://my.hostgator.in/"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path": "work/hostgator-cp"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Angular v1.5", "PHP", "Composer", "Laravel"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "BigRock",
+        "links": [
+            {
+                "text": ".IN Version",
+                "href": "https://www.bigrock.in"
+            },
+            {
+                "text": ".COM Version",
+                "href": "https://www.bigrock.com"
+            },
+            {
+                "text": ".CN Version",
+                "href":"https://www.bigrock.cn"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path": "work/bigrock"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Javascript", "Jquery", "Backbone"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "HostGator",
+        "links": [
+            {
+                "text": ".IN Version",
+                "href": "https://www.hostgator.in"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path": "work/hostgator"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Javascript", "Jquery", "Backbone"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "Bluehost",
+        "links": [
+            {
+                "text": ".IN Version",
+                "href":"https://in.bluehost.com"
+            },
+            {
+                "text": ".CN Version",
+                "href":"https://cn.bluehost.com"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path": "work/bluehost"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Javascript", "Jquery", "Backbone"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "JustHost",
+        "links": [
+            {
+                "text": "JustHost website", 
+                "href": "https://www.JustHost.com/"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path":"work/justhost"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Perl", "Perl Mason", "Docker"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "iPage",
+        "links": [
+            {
+                "text": "Ipage website",
+                "href": "https://www.ipage.com/"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path":"work/ipage"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Perl", "Perl Mason", "Docker"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    },
+    {
+        "title": "Domain.com",
+        "links": [
+            {
+                "text": "Domain.com website",
+                "href": "https://www.domain.com/"
+            }
+        ],
+        "gitLinks": [
+            {
+                "text": "Git Link",
+                "className": "disabled",
+                "title": "Code not available publicly"
+            }
+        ],
+        "desc": {
+            "path":"work/domaincom"
+        },
+        "tags": ["HTML/HTML5", "CSS/CSS3", "Bootstrap", "Perl", "Perl Mason"],
+        "devices": ["desktop", "tablet", "mobile"],
+        "images": []
+    }
+]

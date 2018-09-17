@@ -1,7 +1,9 @@
+@import "../../assets/scss/variables.scss";
 @import "../../assets/scss/mixins.scss";
 
 
 .NavBar {
+    background-color: $dark-grey !important;
     
     &.sidebar {
 
