@@ -47,15 +47,15 @@
         "title": "BigRock",
         "links": [
             {
-                "text": ".IN Version",
+                "text": ".IN Website",
                 "href": "https://www.bigrock.in"
             },
             {
-                "text": ".COM Version",
+                "text": ".COM Website",
                 "href": "https://www.bigrock.com"
             },
             {
-                "text": ".CN Version",
+                "text": ".CN Website",
                 "href":"https://www.bigrock.cn"
             }
         ],
@@ -77,7 +77,7 @@
         "title": "HostGator",
         "links": [
             {
-                "text": ".IN Version",
+                "text": ".IN Website",
                 "href": "https://www.hostgator.in"
             }
         ],
@@ -99,11 +99,11 @@
         "title": "Bluehost",
         "links": [
             {
-                "text": ".IN Version",
+                "text": ".IN Website",
                 "href":"https://in.bluehost.com"
             },
             {
-                "text": ".CN Version",
+                "text": ".CN Website",
                 "href":"https://cn.bluehost.com"
             }
         ],
@@ -125,7 +125,7 @@
         "title": "JustHost",
         "links": [
             {
-                "text": "JustHost website", 
+                "text": "JustHost Website", 
                 "href": "https://www.JustHost.com/"
             }
         ],

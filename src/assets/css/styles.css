@@ -53,6 +53,7 @@ $grid-breakpoints: (
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: bold;
+    margin: 0;
 }
 
 .fw-lighter {
@@ -71,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 .fs-vw {
     font-size: 4.5vw;
 }
+
 @media(min-width: 576px) {
     .fs-vw {
         font-size: 3vw;

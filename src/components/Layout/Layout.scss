@@ -10,27 +10,54 @@
 
     .NavItem {
 
+        @include md {
+            width: auto;
+        }
+
         .NavLink {
             color: darken($lite-grey, 50%) !important;
-            
-            /* &.active {
-                color: $secondary !important;
-            } */
+
+            @include min-width(545px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            @include lg {
+                padding-left: inherit;
+                padding-right: inherit;
+            }
+
+            i {
+                margin-right: 5px;
+                margin-left: 5px;
+
+                @include md {
+                    margin-right: inherit;
+                    margin-left: inherit;
+                }
+            }
         }
 
         .NavLinkTxt {
             font-size: 10px;
             font-weight: 300;
             display: inline-block;
-            text-indent: -999999px;
             text-transform: uppercase;
+
+            @include md {
+                text-indent: -999999px;
+            }
         }   
 
         &:hover {
             .NavLink {
+                color: $secondary !important;
+
                 i {
-                    visibility: hidden;
-                    position: absolute;
+                    @include md {
+                        visibility: hidden;
+                        position: absolute;
+                    }
                 }
                 .NavLinkTxt {
                     text-indent: none;

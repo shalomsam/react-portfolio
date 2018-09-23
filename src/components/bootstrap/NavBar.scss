@@ -4,6 +4,10 @@
 
 .NavBar {
     background-color: $dark-grey !important;
+
+    @include max-width(545px) {
+        // flex-direction: column !important;
+    }
     
     &.sidebar {
 
@@ -43,9 +47,21 @@
     }
 
     .navbar-collapse {
-        // align-items: flex-start;
+        margin-top: 10px;
+
+        @include md {
+            margin-top: inherit;
+        }
+        
         ul {
             align-items: flex-start;
+
+            @include min-width(545px) {
+                flex-direction: row !important;
+            }
+            @include md {
+                flex-direction: column !important;
+            }
         }
     }
 

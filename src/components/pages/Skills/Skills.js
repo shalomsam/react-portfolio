@@ -33,7 +33,7 @@ export default class Skills extends Component {
                     </div>
                     <div className={"col-12 col-lg-7 col-xl-6 px-lg-5 py-lg-4 " + styles.ContentWrp}>
                         <h2>Skills and Tools</h2>
-                        <p>My arsnel of tools and skillset</p>
+                        <p className="fs-italic fw-lighter mb-4">My arsnel of tools and skillsets</p>
                         <div className={"SkillWrp"}>
                             My core expertise is in building complete web apps. On the front-end, I am familiar with the basics like HTML/HAML, CSS/SASS, and Javascript. I also have sound knowledge of front-end Javascript frameworks like Angularjs, React and (of course) jQuery. Javascript is my goto language especially since it blurs the backend frontend divide. I also have worked on Javascript transpilers and Type system like TypeScript.
                             <br/><br/>

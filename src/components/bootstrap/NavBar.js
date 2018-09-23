@@ -34,18 +34,21 @@ class NavBar extends Component {
 
     getClasses = () => {
         let navClass = "navbar " + (this.props.className || "") + classes.NavBar;
-        let sideBarDevice = this.props.sidebar && (typeof this.props.sidebar) !== "boolean" ? this.props.sidebar : "md";
+        // let sideBarDevice = this.props.sidebar && (typeof this.props.sidebar) !== "boolean" ? this.props.sidebar : "md";
         let navBarListClass = "navbar-nav mr-auto";
         let navBarToggle = "navbar-toggler " + classes['navbar-toggler'];
 
 
-        const navSideBarListClass = "flex-" +
-                                    sideBarDevice +
-                                    "-column flex-row navbar-nav w-100";
+        // const navSideBarListClass = "flex-" +
+        //                             sideBarDevice +
+        //                             "-column flex-row navbar-nav w-100";
+        const navSideBarListClass = "flex-column navbar-nav ";
 
-        const navSideBarClass = " sidebar flex-" +
-                                sideBarDevice +
-                                "-column flex-row align-items-start " +
+        // const navSideBarClass = " sidebar flex-" +
+        //                         sideBarDevice +
+        //                         "-column flex-row align-items-start " +
+        //                         (this.props.className || "");
+        const navSideBarClass = " sidebar " +
                                 (this.props.className || "");
 
         // navbar as sidebar

@@ -42,7 +42,9 @@ export default class Portfolio extends Component {
                 <div className="row">
                     <div className="col px-lg-5 py-lg-4">
                         <h2>Portfolio</h2>
-                        <p>Projects/Brands I have worked on</p>
+                        <p className="fs-italic fw-lighter mb-4">
+                            Projects/Brands I have worked on
+                        </p>
                         <div className={styles.PortfolioWrp}>
                             {AllWork}
                         </div>
