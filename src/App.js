@@ -7,6 +7,7 @@ import './assets/css/App.css';
 import Layout from "./components/Layout/Layout";
 import Work from "./components/pages/Work/Porfolio";
 import Skills from "./components/pages/Skills/Skills";
+import CodeLab from "./components/pages/CodeLab/CodeLab";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/portfolio" component={Work} />
           <Route exact path="/skills" component={Skills} />
+          <Route exact path="/codelab" component={CodeLab} />
         </Layout>
       </BrowserRouter>
     );
