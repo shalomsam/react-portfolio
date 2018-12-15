@@ -5,7 +5,7 @@ import About from "./components/pages/About/About";
 
 import './assets/css/App.css';
 import Layout from "./components/Layout/Layout";
-import Work from "./components/pages/Work/Porfolio";
+import Work from "./components/pages/Work/Portfolio";
 import Skills from "./components/pages/Skills/Skills";
 import CodeLab from "./components/pages/CodeLab/CodeLab";
 

@@ -21,6 +21,16 @@ const CodeLab = () => {
                         </div>
                     </div>
                 </div>
+                <div className="col-sm-6">
+                    <div className="card">
+                        <img className="card-img-top img-responsive" height="180" src={img} alt="react-canvas-js" />
+                        <div className="card-body">
+                            <h5 className="card-title">MusicTrends App</h5>
+                            <p className="card-text">This Application is a web application that shows the end user the top trending music across platforms such as YouTube, AppleMusic, LastFm &mp; Spotify</p>
+                            <a href="https://shalomsam.com/musictrends/" className="card-link">Preview</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
