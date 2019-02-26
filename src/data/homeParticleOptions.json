@@ -2,8 +2,9 @@
     "maxParticles": 50,
     "colors": ["#2E1D62", "#513D91", "#487EEF", "#11A887"],
     "shapes": ["circle", "square"],
-    "size": 10,
-    "minVelocity": 0.01,
-    "maxVelocity": 0.10,
-    "alpha": 0.70
+    "size": 12,
+    "minSpeed": 0.05,
+    "maxSpeed": 0.20,
+    "alpha": 0.70,
+    "backgroundColor": "transparent"
 }

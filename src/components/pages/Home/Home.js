@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "../../Avatar/Avatar";
 import styles from "./Home.scss";
-import Canvas from "../../Canvas/Canvas";
+import {Canvas} from "react-canvas-js";
 import ParticleOptions from "../../../data/homeParticleOptions.json";
 
 const home = (props) => {

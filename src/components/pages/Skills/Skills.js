@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Skills.scss";
-import Canvas from "../../Canvas/Canvas";
-import { importAll } from "../../../utils"
+import {Canvas, importAll } from "react-canvas-js";
 
 let images = importAll(require.context('../../../assets/images/skills', false, /\.(png|svg)$/));
 
@@ -10,18 +9,19 @@ images = images.map((image) => {
         type: "image",
         src: image,
     }
-})
+});
+
+console.log(images);
 
 const canvasOptions = {
     "maxParticles": 0,
     "shapes": images,
-    "size": 100,
-    "minVelocity": 0.05, 
-    "maxVelocity": 0.10,
-    "alpha": 0.90
-}
-
-canvasOptions.maxParticles = images.length;
+    "size": 80,
+    "minSpeed": 0.10,
+    "maxSpeed": 0.30,
+    "alpha": 0.90,
+    'backgroundColor': '#f1f1f1'
+};
 
 export default class Skills extends Component {
     render() {

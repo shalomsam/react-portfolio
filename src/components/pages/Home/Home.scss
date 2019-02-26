@@ -1,6 +1,12 @@
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/mixins.scss";
+
 .HomeWrp {
     position: relative;
     text-align: left;
+    @include md {
+        height: 100%;
+    }
 
     .Home {
         text-align: center;
@@ -12,7 +18,7 @@
 
     .Canvas {
         position: absolute;
-        top: 0;
+        top: -20px;
         left: 0;
         z-index: 1;
     }
