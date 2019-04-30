@@ -2,6 +2,7 @@ import React from "react";
 import reactCanvasImg from "../../../assets/images/codelab/react-particles.png";
 import chatBotImg from "../../../assets/images/codelab/hangout-chat-bot-icon.png";
 import reactOnRailsImg from "../../../assets/images/codelab/react-on-rails.png";
+import audioBuzzLogo from '../../../assets/images/codelab/AudioBuzz-logo.png';
 import styles from "./CodeLab.scss";
 
 const CodeLab = () => {
@@ -12,6 +13,20 @@ const CodeLab = () => {
         Experiments gone wild
       </p>
       <div className="row">
+        {/* AudioBuzz Mobile App */}
+        <div className="col-sm-6 mb-5">
+          <div className={"card " + styles.Card}>
+            <div className={"card-img-top text-center " + styles.CardImg}>
+              <img className={styles.AudioBuzzLogo} src={audioBuzzLogo} alt="AudioBuzz" />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">AudioBuzz</h5>
+              <p className="card-text">This is an Android app, built using React Native, that shows a list of top 100 trending music across libraries such as AppleMusic, YouTube, LastFm &amp; Spotify. It uses APIs exposed by the MusicTrends web App (to be renamed as AudioBuzz). Clicking on the listing also allows you to play them on the their respective medium/app.</p>
+              <a href="https://github.com/shalomsam/MusicTrendsNative" className="card-link">GitHub</a>
+              <a href="https://play.google.com/store/apps/details?id=in.audiobuzz.app" className="card-link">Play Store</a>
+            </div>
+          </div>
+        </div>
         {/* MusicTrends App */}
         <div className="col-sm-6 mb-5">
           <div className={"card " + styles.Card}>

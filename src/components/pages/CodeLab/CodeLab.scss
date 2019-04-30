@@ -5,7 +5,7 @@
     .Card {
       min-height: 440px;
       @include lg {
-        min-height: 380px;
+        min-height: 420px;
       }
 
       .CardImg {
@@ -41,6 +41,8 @@
           position: relative;
           top: 37%;
         }
+
+        .AudioBuzzLogo {}
       }
     }
 }
